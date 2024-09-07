@@ -1,12 +1,12 @@
-#Job Portal
+#HireNow
 
 ## Introduction
-Welcome to Job Portal, a platform designed to connect recruiters with job seekers. This README provides an overview of the project, its functionalities, setup instructions, and additional tasks.
+Welcome to HireNow, a platform designed to connect recruiters with job seekers. This README provides an overview of the project, its functionalities, setup instructions, and additional tasks.
 
 ![Screenshot](screenshot.png)
 
 ### Purpose
-The purpose of Job Portal is to create a user-friendly website where recruiters can post job listings and manage applications, while job seekers can browse and apply for suitable roles.
+The purpose of HireNow is to create a user-friendly website where recruiters can post job listings and manage applications, while job seekers can browse and apply for suitable roles.
 
 ## Features
 - **User Authentication**: Recruiters can register, log in, and log out securely.
@@ -73,5 +73,4 @@ The API endpoints for Easily Job Portal are structured as follows:
 - `GET /404`: Render the 404 error page.
 
 ## Conclusion
-Job Portal provides a robust platform for both recruiters and job seekers, facilitating the job search and application process. With its user-friendly interface and comprehensive features, Job Portal aims to streamline the recruitment process for all stakeholders involved.
-If you have any questions or feedback, feel free to reach out to me via email at panwarvishakha31@gmail.com or connect with me on LinkedIn www.linkedin.com/in/vishakha-panwar-web-developer. I'm open to collaborations, job opportunities, or just a friendly chat!
+HireNow provides a robust platform for both recruiters and job seekers, facilitating the job search and application process. With its user-friendly interface and comprehensive features, Job Portal aims to streamline the recruitment process for all stakeholders involved.
