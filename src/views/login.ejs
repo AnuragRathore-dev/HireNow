@@ -1,0 +1,41 @@
+<!-- views/login.ejs -->
+<div class="container signup">
+    <div class="row signup-row">
+        <h1 class="mt-5 mb-4 text-center">Login</h1>
+        <% if(message) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= message %>
+            </div>
+        <% } %>
+        <!-- LEFT COL -->
+        <div class="col-md-6">
+            <form action="/login" method="post">
+                <div class="mb-3">
+                    <label for="email" class="form-label screen-only">Enter Email</label>
+                    <input type="email" class="form-control field-textual" id="email" name="email" placeholder="Enter Email">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label screen-only">Enter Password</label>
+                    <input type="password" class="form-control field-textual" id="password" name="password" placeholder="Enter Password">
+                </div>
+                <button type="submit" class="btnn-link btnn">Login</button>
+            
+                <hr/>
+                <div>
+                    <h6 class="job-portal-h6 text-center mt-4"> SignUp if you don't have an account</h6>
+                    <a href="/signup" class="btnn-link btnn"> SignUp </a>
+                </div>
+            </form>
+        </div>
+        <!-- RIGHT COL -->
+        <div class="col-md-6">
+            <div class="img-container-signup">
+                <img src="images/black-woman-portrait-smile-and-arms-crossed-in-the-city-for-vision-ambition-or-career-success-co.jpg" />
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+

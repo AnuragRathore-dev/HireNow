@@ -1,0 +1,60 @@
+<!-- views/jobs.ejs -->
+<section class="job-list">
+    <div class="container">
+        <div class="row">
+            <h1 class="mb-5 text-center" style="color: #72B261; margin-top: 0px;">Job List</h1>
+
+            <% jobs.forEach(job => { %>
+                <!-- Job Card -->
+                <div class="col-md-4 block">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Company Details -->
+                            <div class="tags">
+                                <!-- Verified and Hiring Tags -->
+                                <h5 class="verified">
+                                    <i class="fa-solid fa-certificate"></i>
+                                    Verified Company
+                                </h5>
+                                <h5 class="verified">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                    Actively hiring
+                                </h5>
+                            </div>
+
+                            <!-- Company Name and Location -->
+                            <div class="row cmp-name">
+                                <div class="col-md-3">
+                                    <img src="<%= job.image %>" alt="Company Logo" class="mx-auto d-block" style="max-width: 100%;max-height: 100%;">
+                                </div>
+                                <div class="col-md-9 head">
+                                    <h6><%= job.location %></h6>
+                                    <h4><%= job.company %></h4>
+                                </div>
+                                <hr class="divider mx-auto d-block"/>
+                            </div>
+
+                            <!-- Job Title, Description, Salary -->
+                            <h4 class="card-title"><%= job.position %></h4>
+                            <p class="card-text"><%= job.description %></p>
+                            <p class="card-text"><i class="fa-solid fa-indian-rupee-sign"></i> <%= job.salary %></p>
+
+                            <!-- Tags -->
+                            <div class="row">
+                                <% job.tags.forEach(tag => { %>
+                                    <div class="col-md-4">
+                                        <h5 class="verified-tags text-center"><%= tag %></h5>
+                                    </div>
+                                <% }); %>
+                            </div>
+
+                            <!-- More Details Button -->
+                            <a href="/jobs/<%= job.id %>" class="btnn-link text-center mx-auto d-block" style="margin-top: 10px;">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Job Card -->
+            <% }); %>
+        </div>
+    </div>
+</section>

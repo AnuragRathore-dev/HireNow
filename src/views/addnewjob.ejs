@@ -1,0 +1,93 @@
+<!-- views/addnewjob.ejs -->
+<section class="job-list">
+    <div class="container">
+        <div class="row">
+            <h1 class="mb-5 text-center" style="color: #72B261; margin-top: 0px;">Post New Job</h1>
+
+            <!-- Post job form -->
+            <form action="/jobs" method="post" enctype="multipart/form-data">
+                <div class="input-group mb-3">
+                    <label for="logo" class="form-label screen-only">Company Logo </label>
+                    <input type="file" name="png" id="logo" class="form-control field-textual" accept="image/*"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="company" class="form-label screen-only">Company Name</label>
+                    <input type="text" class="form-control field-textual" id="company" name="company" placeholder="Company Name">
+                </div>
+
+                <div class="input-group mb-3">
+                    <label for="location" class="form-label screen-only">Company Location</label>
+                    <input type="text" class="form-control field-textual" id="location" name="location" placeholder="Company Location">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="position" class="form-label screen-only">Job Designation</label>
+                    <select required="" name="position" class="form-select" aria-label="Default select example" placeholder="Select Job Designation">
+                        <option value="" disabled selected>Select Job Designation</option>
+                        <option value="UI/UX Designer">UI/UX Designer</option>
+                        <option value="HR">HR</option>
+                        <option value="SDE">SDE</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="MERN Developer">MERN Developer</option>
+                        <option value="MEAN Developer">MEAN Developer</option>
+                        <option value="JAVA Developer">JAVA Developer</option>
+                        <option value="Front-End Developer">Front-End Developer</option>
+                        <option value="Back-End Developer">Back-End Developer</option>
+                        <option value="Full-Stack Developer">Full-Stack Developer</option>
+                    </select>
+                </div>
+        
+                <div class="input-group mb-3">
+                    <label for="salary" class="form-label screen-only">Salary</label>
+                    <input type="text" class="form-control field-textual" id="salary" name="salary" placeholder="Salary">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="tags" class="form-label screen-only">Skills</label>
+                    <select required="" multiple size="1" name="tags" id="tags" class="form-select field-textual" aria-label="Default select example">
+                        <option value="" disabled selected>Select Skills Required</option>
+                        <option value="React">React</option>
+                        <option value="NodeJs">NodeJs</option>
+                        <option value="Angular">Angular</option>
+                        <option value="MongoDB">MongoDB</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Express">Express</option>
+                        <option value="Java">Java</option>
+                        <option value="SpringBoot">SpringBoot</option>
+                        <option value="C++">C++</option>
+                        <option value="Data Structures &amp; Algo">Data Structures &amp; Algo </option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label screen-only">Company Description</label>
+                    <span class="input-group-text">Company Description</span>
+                    <textarea name="description" id="description" cols="139" rows="2" class="form-control field-textual"></textarea>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label for="longdescription1" class="form-label screen-only">Short Description 1</label>
+                    <span class="input-group-text">Short Description 1</span>
+                    <textarea name="longdescription1" id="longdescription1" cols="47" rows="2" class="form-control field-textual"></textarea>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="longdescription2" class="form-label screen-only">Short Description 2</label>
+                    <span class="input-group-text">Short Description 2</span>
+                    <textarea name="longdescription2" id="longdescription2" cols="47" rows="2" class="form-control field-textual"></textarea>
+                </div>
+        
+                
+
+                <div class="input-group mb-3">
+                    <label for="numberofopening" class="form-label screen-only">Total Openings</label>
+                    <input type="text" class="form-control field-textual" id="numberofopening" name="numberofopening" placeholder="Total Openings">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="applyby" class="form-label screen-only">Apply By</label>
+                    <input type="text" class="form-control field-textual" id="applyby" name="applyby" placeholder="Apply By - DD Aug YYYY">
+                </div>
+
+                <div class="mb-3">
+                    <label for="numberofapplicant" class="form-label screen-only">Number of Applicants</label>
+                    <input type="hidden" class="form-control field-textual" id="numberofapplicant" name="numberofapplicant" value="0">
+                </div>
+
+                <button class="btnn-link btnn" type="submit"> Submit </button>
+              </form>
+            <!-- End of post job form -->
+        </div>
+    </div>
+</section>

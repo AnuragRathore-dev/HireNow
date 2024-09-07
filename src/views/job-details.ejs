@@ -1,0 +1,188 @@
+<!-- views/job-details.ejs -->
+<section class="job-detail">
+    <div class="container">
+        <div class="row">
+            <!-- LEFT COL -->
+            <div class="col-md-8 all-block">
+                <div class="row">
+                    <div class="col-md-12 all-block details">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="tags">
+                                    <h5 class="verified" style="width: auto; padding: 10px 20px; color: #72b261;">FULL TIME</h5>
+                                    <h5 class="verified" style="width: auto; padding: 10px 20px; color: #72b261;">NUMBER OF OPENINGS: <%= find.numberofopening %></h5>
+                                    <% if(locals?.userEmail) {%>
+                                        <a href="/jobs/update/<%= find?.id %>" class="mx-2">
+                                            <h5 class="verified" style="width: auto; padding: 10px 20px; color: #72b261;">
+                                                EDIT &nbsp;<i class="fa-solid fa-pen-to-square"></i>
+                                            </h5>
+                                        </a>
+                                        <a class="text-danger" href="/jobs/delete/<%= find?.id %>">
+                                            <h5 class="delete" style="width: auto; padding: 10px 20px;">
+                                                DELETE &nbsp;<i class="fa-solid fa-trash" style="color: #9f1901;"></i>
+                                            </h5>
+                                        </a>
+                                    <% } %>
+                                </div> 
+                            </div>
+                            <% if(locals?.userEmail) {%>
+                                <div class="col-md-3">
+                                    <!-- <a href="#" class="btnn-link text-center mx-auto d-block open-modal" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a> -->
+                                </div>
+                            <% } else { %>
+                                <div class="col-md-3">
+                                    <a href="#" class="btnn-link text-center mx-auto d-block open-modal" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a>
+                                </div>
+                            <% } %>
+                            
+                        </div>
+
+                        <div class="row"> 
+                            <div class="col-md-12">
+                                <h1 class="job-detail-heading-h1"><%= find.position %></h1>
+                                <div style="display: inline-flex; margin: 0;">
+                                    <p class="card-text"><i class="fa-solid fa-location-dot"></i>&nbsp;<%= find.location %></p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <p class="card-text"><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp;<%= find.salary %></p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <p class="card-text"><i class="fa-solid fa-calendar-check"></i>&nbsp;Apply By: <%= find.applyby %></p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    
+                                        <a href="/applicants/"> 
+                                            <p class="card-text"><i class="fa-solid fa-users-rectangle"></i>&nbsp;Applicants: <%= find.numberofapplicant %></p>
+                                        </a>
+                                   
+                                    
+                                </div>
+                                <hr class="divider mx-auto d-block" style="width: 100% !important;"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="job-detail-heading-h2">Job Description:</h2>
+                                <p class="job-detail-p"><%= find.longdescription1 %></p>
+                                <p class="job-detail-p"><%= find.longdescription2 %></p>
+                                <!-- Add more details here if needed -->
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 20px;">
+                            <h2 class="job-detail-heading-h2">Skills Required:</h2>
+                            <% find.tags.forEach(tags => { %>
+                                <div class="col-md-3"><h5 class="verified-tags text-center"><%= tags %></h5></div>
+                            <% }); %>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 text-center posted">
+                                <p> Posted On: <%= locals.lastVisit %> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT COL -->
+            <div class="col-md-4">
+                <div class="row">
+                    <!-- TOP BLOCK -->
+                    <div class="col-md-12 all-block">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="tags">
+                                    <h5 class="verified">
+                                        <i class="fa-solid fa-certificate"></i>
+                                        Verified Company
+                                    </h5>
+                                    <h5 class="verified">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                        Actively hiring
+                                    </h5>
+                                </div> 
+
+                                <div class="row cmp-name">
+                                    <div class="col-md-3">
+                                        <img src="<%= find.image %>" alt="Company Logo" class="mx-auto d-block" style="max-width: 100%;max-height: 100%;">
+                                    </div>
+                                    <div class="col-md-9 head">
+                                        <h6><%= find.location %></h6>
+                                        <h4><%= find.company %></h4>
+                                    </div>
+                                    <hr class="divider mx-auto d-block"/>
+                                </div>
+
+                                <p class="card-text" style="font-size: 16px !important; font-weight: 200!important;">
+                                    <i class="fa-solid fa-users"></i>&nbsp;&nbsp; Size: 1,001 - 5,000 employees
+                                </p>
+                                <p class="card-text" style="font-size: 16px !important; font-weight: 200!important;">
+                                    <i class="fa-solid fa-user-ninja"></i>&nbsp;&nbsp; Any Experience Welcomed
+                                </p>
+                                <p class="card-text" style="font-size: 16px !important; font-weight: 200!important;">
+                                    <i class="fa-solid fa-building"></i>&nbsp;&nbsp; Industry: Healthcare, Insurance
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BOTTOM BLOCK -->
+                    <div class="col-md-12 all-block">
+                        <div class="card newsletter">
+                            <div class="card-body">
+                                <h4 class="card-title text-white" style="font-size: 25px !important; font-weight: 300!important;">Newsletter</h4>
+                                <p class="card-text text-white" style="font-size: 16px !important; font-weight: 200!important;">
+                                    Sign up our newsletter to get update information, news, insight or promotions.
+                                </p>
+                                <form action="/signup-newsletter" method="post">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label screen-only">Enter Name</label>
+                                        <input type="text" class="form-control field-textual" id="name" name="name" placeholder="Enter Name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label screen-only">Enter Email</label>
+                                        <input type="email" class="form-control field-textual" id="email" name="email" placeholder="Enter Email">
+                                    </div>
+                                    <!-- <button type="submit" class="btnn-link btnn">SignUp</button> -->
+                                    <a href="#" class="btnn-link text-center mx-auto d-block" style="background-color: #183444;">SIGN UP</a>
+                                </form>     
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal HTML -->
+<div class="modal" tabindex="-1" id="applyModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Apply in Less than a minute!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/applicants/<%= find.id %>" method="post" id="myForm" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="name" class="form-label screen-only">Enter Name</label>
+                    <input type="text" class="form-control field-textual" id="name" name="name" placeholder="Enter Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label screen-only">Enter Email</label>
+                    <input type="email" class="form-control field-textual" id="email" name="email" placeholder="Enter Email">
+                </div>
+                <div class="mb-3">
+                    <label for="contact" class="form-label screen-only">Enter Contact</label>
+                    <input type="text" class="form-control field-textual" id="contact" name="contact" placeholder="Enter Contact">
+                </div>
+                <div class="mb-3">
+                    <label for="resume" class="form-label screen-only">Upload Resume</label>
+                    <input type="file" name="resume" id="resume" class="form-control field-textual" accept="pdf/*"/>
+                </div>
+                <button type="submit" class="btnn-link btnn">Submit</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

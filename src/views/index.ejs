@@ -1,0 +1,44 @@
+<!-- views/index.ejs -->
+<section class="job-portal">
+    <div class="container job-portal-wrap">
+        <!-- ROW -->
+        <div class="row">
+            <!-- LEFT COL -->
+            <div class="col-md-6">
+                <h6 class="job-portal-h6">Lets start your careers here!</h6>
+                <h1 class="job-portal-h1">Looking for a career change? Browse our job listings now!</h1>
+                <p> 
+                    A comprehensive platform for reliable job opportunities and internships.<br/>
+                    <span>Get Discovered. Get Hired.</span>
+                </p>
+                <div class="member">
+                    <div>
+                        <img src="images/1.jpeg" class="member-img"/>
+                        <img src="images/2.jpeg" class="member-img"/>
+                        <img src="images/3.jpeg" class="member-img"/>
+                        <img src="images/4.jpeg" class="member-img"/>
+                        <img src="images/5.jpeg" class="member-img"/>
+                    </div>
+                    <h6 class="inner-col-h6">540 K+ Member Active</h6>
+                </div> 
+                <% if(locals.userEmail) {%>   
+                <div>
+                    <a href="/jobs" class="btnn-link">Jobs</a>
+                    <a href="/postjob" class="btnn-link">Post New Job</a>
+                </div>
+                <% }else { %>
+                    <div>
+                        <a href="/jobs" class="btnn-link">I'm a Job Seeker</a>
+                        <a href="/signup" class="btnn-link">I'm a Recruiter</a>
+                    </div>
+                <% } %>  
+            </div>
+            <!-- RIGHT COL -->
+            <div class="col-md-6">
+                <div class="img-container">
+                    <img src="images/img_frame.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
