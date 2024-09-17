@@ -1,15 +1,15 @@
 import nodemailer from 'nodemailer'
-// Create a transporter object using SMTP
+
 export const mail=(email)=>{
     const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-    user: 'vishakhapanwar.333@gmail.com',
+    user: '/yours',
     pass: 'tear mxxe gepz pmqr',
     },
     });
     const mailOptions = {
-    from: 'vishakhapanwar.333@gmail.com',
+    from: '/your',
     to: email,
     subject: 'Job Applied Confirmation E-Mail',
     text: 'This is a confirmation email sent from Job-Portal for your successful resume submission!',
@@ -22,5 +22,4 @@ export const mail=(email)=>{
     }
     });
 }
-// Define the email configuration
-// Send the email
+
