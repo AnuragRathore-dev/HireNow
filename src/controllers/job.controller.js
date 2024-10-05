@@ -1,7 +1,6 @@
 import {mail} from "../mailing/mail.js"
 import JobModel from "../models/job.model.js"
 import ApplicantModel from "../models/applicants.model.js"
-
 function generateUniqueApplicantId() {
     // Generate a random number and append a timestamp to ensure uniqueness
     return Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
