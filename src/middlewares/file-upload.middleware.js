@@ -1,7 +1,6 @@
 import multer from "multer";
 import fs from "fs";
 import path from "path"; // Import the path module
-
 // Function to ensure that the destination directory exists
 const ensureDirectoryExistence = (filePath) => { 
     const directory = path.dirname(filePath);
